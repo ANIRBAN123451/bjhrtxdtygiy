@@ -11,6 +11,10 @@ class sling{
 
         this.posB=point2
     }
+    
+    move(){
+        this.sling.bodyA=null;
+    }
 
     display(){
 
