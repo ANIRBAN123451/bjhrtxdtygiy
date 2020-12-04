@@ -1,29 +1,17 @@
 class object{
-    constructor(length,breadth,width,height){
+    constructor(x, y, width, height) {
+        this.body = Bodies.rectangle(x, y, width, height);
+        this.image = loadImage("stone.png");
+        World.add(world, this.body);
 
-        this.image=loadImage("stone.png");
-        this.image.scale=0.8;
-
-        this.h=height
-        this.w=width
-        this.x=length
-        this.y=breadth
-    }
-
-    display(){
+        this.width = width;
+        this.height = height;
+      }
+      display(){
         push();
-
-        imageMode(CENTER)
-        image(this.image,this.x,this.y,this.w,this.h)
- 
+        translate(this.body.position.x, this.body.position.y);
+        imageMode(CENTER);
+        image(this.image, 0, 0, this.width, this.height);
         pop();
+      }
     }
-
-
-
-
-
-
-
-
-}
