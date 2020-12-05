@@ -36,10 +36,10 @@ function draw() {
   background(bgImage);
   Engine.update(engine);
 
-  detectCollision(ob1,food0);
+ /* detectCollision(ob1,food0);
   detectCollision(ob1,food1);
   detectCollision(ob1,food2);
-  
+  */
 
  fill("green")
   wall1.show();
