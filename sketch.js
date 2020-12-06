@@ -42,7 +42,7 @@ function draw() {
   */
 
  fill("green")
-  wall1.show();
+  ground1.show();
 
   boy.display();
   stone.display();
