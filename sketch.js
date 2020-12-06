@@ -20,13 +20,13 @@ function setup() {
 	//Create the Bodies Here.
     ground1=new ground(600,395,1200,10);
 	boy=new character(200,340,100,200);
-	stone1=new weapon(160,293,27,27);
+	stone=new weapon(160,293,27,27);
 	tree1=new tree(1000,300,300,400)
 	mango1=new fruit(1090,130,50,50)
 	mango2=new fruit(990,80,50,50)
 	mango3=new fruit(920,140,50,50)
 
-	rope1=new rope(stone1.body,{x:160,y:293})
+	rope1=new rope(stone.body,{x:160,y:293})
 }
 
 function draw() {
@@ -55,7 +55,7 @@ function draw() {
 }
 
 function mouseDragged(){
-    Matter.Body.setPosition(stone1.body,{x:mouseX,y:mouseY});
+    Matter.Body.setPosition(stone.body,{x:mouseX,y:mouseY});
 }
 
 function mouseReleased(){
@@ -64,8 +64,8 @@ function mouseReleased(){
 
 function keyPressed(){
     if(keyCode===32){
-        Matter.Body.setPosition(stone1.Body,{x:235,y:420})
-        launcherObj.attach(stone1.Body);
+        Matter.Body.setPosition(stone.Body,{x:235,y:420})
+        launcherObj.attach(stone.Body);
     }
 }
 
