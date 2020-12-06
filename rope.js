@@ -4,7 +4,8 @@ class rope{
             bodyA: bodyA,
             pointB: point2,
             stiffness: 3,
-            length: 10
+            length: 10,
+            isStatic:false
         }
         this.sling = Constraint.create(options);
         World.add(world, this.sling);
