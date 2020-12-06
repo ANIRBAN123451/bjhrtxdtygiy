@@ -1,7 +1,7 @@
 class tree{
     constructor(x, y, width, height) {
       var op={
-        isStatic:false
+        isStatic:true
     }
         this.body = Bodies.rectangle(x, y, width, height,op);
         this.image = loadImage("tree.png");
