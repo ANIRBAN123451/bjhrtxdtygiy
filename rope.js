@@ -4,7 +4,7 @@ class rope{
             bodyA: bodyA,
             pointB: point2,
             stiffness: 0.04,
-            length: 10,
+            length: 10
             
         }
         this.sling = Constraint.create(options);
