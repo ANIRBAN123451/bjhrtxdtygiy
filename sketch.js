@@ -5,11 +5,10 @@ const Bodies = Matter.Bodies;
 const Body = Matter.Body;
 const Constraint=Matter.Constraint;
 
-
+var wall1;
 
 function preload(){
 	bgImage=loadImage("bg.jpg")
-	
 }
 
 function setup() {
@@ -19,24 +18,22 @@ function setup() {
 	world = engine.world;
 
 	//Create the Bodies Here.
-        ground1=new ground(600,395,1200,10);
+    ground1=new ground(600,395,1200,10);
 	boy=new character(200,340,100,200);
-	stone=new weapon(160,293,27,27);
+	stone1=new weapon(160,293,27,27);
 	tree1=new tree(1000,370,300,400)
 	mango1=new fruit(1090,130,50,50)
 	mango2=new fruit(990,80,50,50)
 	mango3=new fruit(920,140,50,50)
-	
 
-	rope1=new rope(boy.body,{x:160,y:293})
-	
+	rope1=new rope(stone.body,{x:160,y:293})
 }
 
 function draw() {
   background(bgImage);
   Engine.update(engine);
 
- /* detectCollision(ob1,food0);
+  /*detectCollision(ob1,food0);
   detectCollision(ob1,food1);
   detectCollision(ob1,food2);
   */
@@ -51,6 +48,18 @@ function draw() {
   mango2.display();
   mango3.display();
   rope1.display();
+
+  collision(lstone,lmango){
+      mangoBodyPosition=lmango.body.position;
+      stoneBodyPosition=lstone.body.position;
+
+      var distance=dist(stoneBodyPosition.x,stoneBodyPosition.y,mangoBodyPosition.x,mangoBodyPosition.y)
+      if(distance<=lmango.r+lstone.r)
+      {
+          Matter.Body.isStatic(lmango.body,false)
+      }
+    }
+
 }
 
 function mouseDragged(){
@@ -59,4 +68,11 @@ function mouseDragged(){
 
 function mouseReleased(){
     rope1.move();
+}
+
+function keyPressed(){
+    if(keyCode===32){
+        Matter.Body.setPosition(stone.Body,{x:235,y:420})
+        launcherObj.attach(stone.Body);
+    }
 }
