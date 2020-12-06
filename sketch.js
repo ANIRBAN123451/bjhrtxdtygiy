@@ -47,17 +47,10 @@ function draw() {
   mango2.display();
   mango3.display();
   rope1.display();
-
-  collision(lstone,lmango){
-      mangoBodyPosition=lmango.body.position;
-      stoneBodyPosition=lstone.body.position;
-
-      var distance=dist(stoneBodyPosition.x,stoneBodyPosition.y,mangoBodyPosition.x,mangoBodyPosition.y)
-      if(distance<=lmango.r+lstone.r)
-      {
-          Matter.Body.isStatic(lmango.body,false)
-      }
-    }
+ 
+  detectCollision(stone,mango1);
+  detectCollision(stone,mango2);
+  detectCollision(stone,mango3);
 
 }
 
@@ -75,3 +68,14 @@ function keyPressed(){
         launcherObj.attach(stone.Body);
     }
 }
+
+function detectCollision(lstone,lmango){
+    mangoBodyPosition=lmango.body.position;
+    stoneBodyPosition=lstone.body.position;
+
+    var distance=dist(stoneBodyPosition.x,stoneBodyPosition.y,mangoBodyPosition.x,mangoBodyPosition.y)
+    if(distance<=lmango.r+lstone.r)
+    {
+        Matter.Body.isStatic(lmango.body,false)
+    }
+  }
