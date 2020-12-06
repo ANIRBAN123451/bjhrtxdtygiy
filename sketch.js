@@ -58,5 +58,5 @@ function mouseDragged(){
 }
 
 function mouseReleased(){
-    sling.move();
+    rope1.move();
 }
