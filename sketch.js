@@ -5,8 +5,6 @@ const Bodies = Matter.Bodies;
 const Body = Matter.Body;
 const Constraint=Matter.Constraint;
 
-var wall1;
-
 function preload(){
 	bgImage=loadImage("bg.jpg")
 }
