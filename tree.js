@@ -1,6 +1,6 @@
 class tree{
     constructor(x, y, width, height) {
-        VAR OP={
+        var op={
             isStatic:true
         }
         this.body = Bodies.rectangle(x, y, width, height,op);
