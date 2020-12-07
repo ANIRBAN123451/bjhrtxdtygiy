@@ -20,7 +20,7 @@ function setup() {
 	//Create the Bodies Here.
     ground1=new ground(600,395,1200,10);
 	boy=new character(200,340,100,200);
-	stone=new weapon(160,293,30);
+	stone=new weapon(160,290,30);
 	tree1=new tree(1000,370,300,400)
 	mango1=new fruit(1090,130,50)
 	mango2=new fruit(990,80,50)
