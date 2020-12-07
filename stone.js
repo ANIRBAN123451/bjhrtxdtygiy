@@ -1,23 +1,23 @@
 class weapon{
-    constructor(x, y, width, height) {
-        var op={
-        isStatic:false,
-        restitution:0,
-        friction:1,
-        density:1.2
+  constructor(x,y,radius){
+      var op={
+          isStatic: false,
+          restitution: 0,
+          friction: 1,
+          density:1.2
       }
-        this.body = Bodies.rectangle(x, y, width, height,op);
-        this.image = loadImage("stone.png");
-        World.add(world, this.body);
+      this.body=Bodies.circle(x,y,radius/2,op);
+      this.radius= radius;
+      this.image=loadImage("stone.png");
+      World.add(world,this.body);
+  }
 
-        this.width = width;
-        this.height = height;
-      }
-      display(){
-        push();
-        translate(this.body.position.x, this.body.position.y);
-        imageMode(CENTER);
-        image(this.image, 0, 0, this.width, this.height);
-        pop();
-      }
-    }
+  display(){
+      push(); 
+      translate(this.body.position.x, this.body.position.y,this.radius);
+      
+      image( this.image, 0,0,50,50) ; 
+      rotate(this.body.angle); 
+      pop();
+  }
+}
