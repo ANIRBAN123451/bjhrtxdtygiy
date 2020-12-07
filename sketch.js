@@ -5,6 +5,8 @@ const Bodies = Matter.Bodies;
 const Body = Matter.Body;
 const Constraint=Matter.Constraint;
 
+var wall1;
+
 function preload(){
 	bgImage=loadImage("bg.jpg")
 }
@@ -18,11 +20,11 @@ function setup() {
 	//Create the Bodies Here.
     ground1=new ground(600,395,1200,10);
 	boy=new character(200,340,100,200);
-	stone=new weapon(160,293,27,27);
-	tree1=new tree(1000,200,300,400)
-	mango1=new fruit(1090,130,50,50)
-	mango2=new fruit(990,80,50,50)
-	mango3=new fruit(920,140,50,50)
+	stone=new weapon(160,293,50);
+	tree1=new tree(1000,370,300,400)
+	mango1=new fruit(1090,130,50)
+	mango2=new fruit(990,80,50)
+	mango3=new fruit(920,140,50)
 
 	rope1=new rope(stone.body,{x:160,y:293})
 }
@@ -30,10 +32,6 @@ function setup() {
 function draw() {
   background(bgImage);
   Engine.update(engine);
-
-  detectCollision(stone,mango1);
-  detectCollision(stone,mango2);
-  detectCollision(stone,mango3);
 
  fill("green")
   ground1.show();
@@ -45,7 +43,8 @@ function draw() {
   mango2.display();
   mango3.display();
   rope1.display();
- 
+
+  
   detectCollision(stone,mango1);
   detectCollision(stone,mango2);
   detectCollision(stone,mango3);
