@@ -1,6 +1,9 @@
 class tree{
     constructor(x, y, width, height) {
-        this.body = Bodies.rectangle(x, y, width, height);
+        VAR OP={
+            isStatic:true
+        }
+        this.body = Bodies.rectangle(x, y, width, height,op);
         this.image = loadImage("tree.png");
         World.add(world, this.body);
 
