@@ -1,6 +1,12 @@
 class weapon{
     constructor(x, y, width, height) {
-        this.body = Bodies.rectangle(x, y, width, height);
+        var op={
+        isStatic:false,
+        restitution:0,
+        friction:1,
+        density:1.2
+      }
+        this.body = Bodies.rectangle(x, y, width, height,op);
         this.image = loadImage("stone.png");
         World.add(world, this.body);
 
