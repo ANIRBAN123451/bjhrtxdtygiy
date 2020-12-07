@@ -19,9 +19,7 @@ class rope{
 
     display(){
         if(this.sling.bodyA){
-            var pointA = this.sling.bodyA.position;
-            var pointB = this.posB;
-            strokeWeight(3);
+            
         }
     }
     
