@@ -23,7 +23,7 @@ function setup() {
 	stone=new weapon(160,280,30);
 	tree1=new tree(1000,200,300,400);
 	mango1=new fruit(1090,150,50);
-	mango2=new fruit(990,80,50);
+	mango2=new fruit(990,100,50);
 	mango3=new fruit(920,140,50);
 
 	rope1=new rope(stone.body,{x:160,y:293})
