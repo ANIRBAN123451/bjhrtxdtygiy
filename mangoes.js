@@ -1,7 +1,7 @@
 class fruit{
   constructor(x,y,radius){
       var op={
-          isStatic: false,
+          isStatic: true,
           restitution: 0,
           friction: 1
       }
