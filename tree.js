@@ -1,8 +1,8 @@
 class tree{
     constructor(x, y, width, height) {
-        var op={
-            isStatic:true
-        }
+      var op={
+        isStatic:true
+    }
         this.body = Bodies.rectangle(x, y, width, height,op);
         this.image = loadImage("tree.png");
         World.add(world, this.body);
@@ -12,7 +12,7 @@ class tree{
       }
       display(){
         push();
-        translate(this.body.position.x, this.body.position.y);
+        translate(this.body.position.x, this.body.position.y,this.width, this.height);
         imageMode(CENTER);
         image(this.image, 0, 0, this.width, this.height);
         pop();
